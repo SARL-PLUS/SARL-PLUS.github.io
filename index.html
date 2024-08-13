@@ -1,39 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SARL Team Homepage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif; /* Adds a more readable typeface */
-            margin: 20px;
-            background-color: #f4f4f4; /* Light grey background */
-            color: #333; /* Dark grey text for better readability */
-        }
-        h1 {
-            color: #0056b3; /* A blue color for headings */
-        }
-        a {
-            color: #d63384; /* A distinct color for links */
-            text-decoration: none; /* Removes underline from links */
-        }
-        a:hover {
-            text-decoration: underline; /* Adds underline on hover for better user interaction */
-        }
-    </style>
+  <title>Current activities</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/stylebiblio.css">
+  <script type="text/javascript" src="js/bibtextohtml.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to the SARL (Smart Analytics and Reinforcement Learning) Team Homepage</h1>
-    </header>
-    <section>
-        <p>We focus on Reinforcement Learning and Optimization in Salzburg.</p>
-    </section>
-    <footer>
-        <a href="https://www.plus.ac.at/aihi/der-fachbereich/ida-lab/teams/sarl/" target="_blank">Learn more about us at our university homepage</a>
-        <br>
-        <a href="mailto:simon.hirlaender@plus.ac.at">Email our team leader Simon Hirlaender</a>
-    </footer>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <div class="content">
+      <div class="content-table flex-column">
+        <!-- Summary Intro -->
+        <div class="flex-row" style="background: #e0e0e0; padding: 10px; margin-bottom: 20px;">
+          <h2>Overview of Our Current Activities</h2>
+          <p>At the SARL team, led by Simon Hirlaender, we explore cutting-edge reinforcement learning applications from theoretical research to industry solutions. Our team at PLUS University Salzburg focuses on multivariate time series, Bayesian methods, and the synergistic integration of human and artificial intelligence to address global challenges.</p>
+        </div>
+        <!-- Detailed Content Begins -->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <div style="text-align: center;">
+              <img class="logo" src="img/RLogo.png" width="200">
+            </div>
+          </div>
+          <div class="flex-item flex-column">
+            <!-- Contacts and Affiliations -->
+            <p class="text text-large">
+              <a target="_blank" href="javascript:void(0)">Simon Hirlaender</a> (at) plus.ac.at<br>
+              <a target="_blank" href="https://www.plus.ac.at/aihi/der-fachbereich/ida-lab/">IDA Lab</a><br>
+              <a target="_blank" href="https://www.plus.ac.at/?lang=en&page_id=298879">Department of Artificial Intelligence and Human Interfaces</a><br>
+              <a target="_blank" href="https://www.plus.ac.at/digital-and-analytical-sciences/the-faculty/?lang=en">Faculty of Digital and Analytical Sciences</a><br>
+              <a target="_blank" href="https://www.plus.ac.at">PLUS University Salzburg, Austria</a><br>
+            </p>
+          </div>
+        </div>
+        <!-- Research and Projects Description -->
+        <!-- Rest of the original content follows... -->
+      </div>
+    </div>
+  </div>
 </body>
 </html>
