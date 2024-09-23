@@ -19,7 +19,9 @@
 ### Team Lead
 
 **Simon Hirlaender**  
-**Email:** [simon.hirlaender@plus.ac.at](mailto:simon.hirlaender@plus.ac.at) or [sarl.ida.plus@gmail.com](mailto:sarl.ida.plus@gmail.com) 
+**Email:** [simon.hirlaender@plus.ac.at](mailto:simon.hirlaender@plus.ac.at) or [sarl.ida.plus@gmail.com](mailto:sarl.ida.plus@gmail.com)
+
+**University homepage:** [https://www.plus.ac.at/aihi/der-fachbereich/ida-lab/teams/sarl/](https://www.plus.ac.at/aihi/der-fachbereich/ida-lab/teams/sarl/)
 
 ### Address
 
