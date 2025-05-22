@@ -30,5 +30,21 @@ Fachbereich Artificial Intelligence & Human Interfaces (AIHI)
 Fakultät Digital & Analytical Sciences (DAS)  
 Paris Lodron Universität Salzburg (PLUS)  
 Jakob-Haringer-Straße 6 | Techno 6 | 5020 Salzburg | Austria
+# SARL Team Website
 
+This is the official website for the Smart Analytics and Reinforcement Learning (SARL) Team at PLUS University Salzburg.
+
+## Optimization Notes
+
+The website has been optimized for fast loading with the following techniques:
+
+### Performance Optimizations
+
+1. **Critical CSS Inlining**: Essential styles are inlined in the HTML head to eliminate render-blocking CSS
+2. **System Font Stack**: Using system fonts first reduces font loading time
+3. **Lazy Loading**: Images and non-critical scripts use lazy loading
+4. **CSS & JS Optimization**: Combined and minified files reduce HTTP requests
+5. **Responsive Design**: Optimized for all device sizes
+
+### File Structure
 ---

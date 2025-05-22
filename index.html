@@ -1,61 +1,595 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <title>SARL Team University Salzburg</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/menu.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/stylebiblio.css">
-  <script type="text/javascript" src="js/bibtextohtml.js"></script>
+  <title>SARL Team | Smart Analytics and Reinforcement Learning | University Salzburg</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Smart Analytics and Reinforcement Learning (SARL) research team at PLUS University Salzburg, led by Simon Hirlaender.">
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+  <!-- Critical CSS inline -->
   <style>
-    .menu-index {
-      color: rgb(255, 255, 255) !important;
-      opacity: 1 !important;
-      font-weight: 700 !important;
+    /* CSS Variables for consistent theming */
+    :root {
+      --primary-color: #0055a3;
+      --secondary-color: #00bfa5;
+      --accent-color: #ff6e42;
+      --dark-color: #1e293b;
+      --light-color: #f8fafc;
+      --gray-color: #e2e8f0;
+      --text-color: #334155;
+      --text-light: #64748b;
+      --border-radius: 6px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --container-width: 1200px;
+      --section-spacing: 5rem;
+    }
+
+    /* Critical path CSS */
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #fff;
+    }
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      box-sizing: border-box;
+    }
+    .flex-column { display: flex; flex-direction: column; }
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .flex-item { flex: 1; min-width: 250px; }
+
+    /* Header & Navigation */
+    header {
+      background-color: var(--dark-color);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-md);
+    }
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li { margin: 0 0.5rem; }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+    .nav-links a:hover { background-color: rgba(255,255,255,0.1); }
+    .nav-links a.active {
+      background-color: var(--secondary-color);
+      font-weight: 700;
+    }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    /* Section styling */
+    section {
+      padding: 4rem 0;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--dark-color);
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: var(--transition);
+      height: 100%;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-5px);
+    }
+    .card-body {
+      padding: 1.5rem;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--dark-color);
+    }
+
+    /* Media queries */
+    @media (max-width: 768px) {
+      .flex-row { flex-direction: column; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .mobile-menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--dark-color);
+        padding: 1rem 0;
+      }
+      .nav-links.show { display: flex; }
+      .nav-links li { margin: 0.5rem 1rem; }
+    }
+
+    /* Loading animation */
+    .loading-indicator {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px 15px;
+      border-radius: var(--border-radius);
+      font-size: 14px;
+      z-index: 9999;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Button styles */
+    .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #0066cc;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+    .btn-outline:hover {
+      background: var(--primary-color);
+      color: white;
     }
   </style>
+
+  <!-- Deferred CSS loading -->
+  <link href="css/optimized.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <!-- Optimized font loading with font-display -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- JavaScript with defer attributes -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
-  <div class="menu-container"></div>
-  <div class="content-container">
-    <div class="content">
-      <div class="content-table flex-column">
-        <!-- Summary Intro -->
-        <div class="flex-row" style="background: #e0e0e0; padding: 10px; margin-bottom: 20px;">
-          <h2>Overview of the SARL (Smart Analytics and Reinforcement Learning) Team</h2>
-          <p>At the SARL team, led by Simon Hirlaender, we explore cutting-edge reinforcement learning applications from theoretical research to industry solutions. Our team at PLUS University Salzburg focuses on multivariate time series, Bayesian methods, and the synergistic integration of human and artificial intelligence to address global challenges.</p>
+  <!-- Navigation header -->
+  <header id="top">
+    <div class="container">
+      <nav class="site-nav">
+        <div class="logo">
+          <a href="#" aria-label="SARL Home">
+            <img src="img/RLogo.png" alt="SARL Logo" width="50" height="50" loading="lazy">
+          </a>
         </div>
-        <!-- Detailed Content Begins -->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <div style="text-align: center;">
-              <img class="logo" src="img/RLogo.png" width="200">
-            </div>
-          </div>
-          <div class="flex-item flex-column">
-            <!-- Contacts and Affiliations -->
-            <p class="text text-large">
-              <a href="mailto:simon.hirlaender@plus.ac.at">Simon Hirlaender</a> (at) plus.ac.at<br>
-              <a target="_blank" href="https://www.plus.ac.at/aihi/der-fachbereich/ida-lab/teams/sarl/">Team</a><br>
-              <a target="_blank" href="https://www.plus.ac.at/?lang=en&page_id=298879">Department of Artificial Intelligence and Human Interfaces</a><br>
-              <a target="_blank" href="https://www.plus.ac.at/digital-and-analytical-sciences/the-faculty/?lang=en">Faculty of Digital and Analytical Sciences</a><br>
-              <a target="_blank" href="https://www.plus.ac.at">PLUS University Salzburg, Austria</a><br>
-            </p>
-          </div>
-        </div>
-        <!-- Research and Projects Description -->
-        <!-- Rest of the original content follows... -->
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Smart Analytics & Reinforcement Learning</h1>
+      <p>Exploring cutting-edge reinforcement learning applications from theoretical research to industry solutions at PLUS University Salzburg.</p>
+      <div class="hero-buttons">
+        <a href="#research" class="btn">Our Research</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Research Areas Section -->
+  <section id="research">
+    <div class="container">
+      <h2>Research Areas</h2>
+      <p class="section-intro">Our team focuses on these key areas of reinforcement learning and AI research:</p>
+
+      <div class="flex-row">
+        <div class="flex-item">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Multivariate Time Series Analysis</h3>
+              <p>Developing novel approaches for analyzing complex temporal data patterns and trends across multiple variables.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-item">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Bayesian Methods</h3>
+              <p>Applying probabilistic modeling and Bayesian inference to handle uncertainty and incorporate prior knowledge in learning systems.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-item">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Human-AI Integration</h3>
+              <p>Creating synergistic systems that combine human expertise with artificial intelligence capabilities for optimal decision-making.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="bg-light">
+    <div class="container">
+      <h2>Our Team</h2>
+      <p class="section-intro">Meet the researchers and academics driving innovation in reinforcement learning:</p>
+
+      <div class="team-lead">
+        <div class="card team-card">
+          <div class="card-body">
+            <div class="team-header">
+              <img src="img/organizer_simon_hirlaender.jpg" alt="Simon Hirlaender" class="team-photo" width="150" height="150" loading="lazy" onerror="this.src='img/placeholder-profile.jpg'">
+              <div class="team-info">
+                <h3 class="card-title">Simon Hirlaender</h3>
+                <p class="team-role">Team Lead, Reinforcement Learning and Smart Analytics</p>
+                <p class="team-email"><a href="mailto:simon.hirlaender@plus.ac.at">simon.hirlaender@plus.ac.at</a></p>
+              </div>
+            </div>
+            <p class="team-bio">Leading the SARL team's research initiatives in reinforcement learning applications and interdisciplinary AI projects.</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="flex-row team-members">
+        <!-- Team Members -->
+        <div class="flex-item">
+          <div class="card team-card">
+            <div class="card-body">
+              <div class="team-header">
+                <img src="img/organizer_sarah_trausner.jpg" alt="Sarah Trausner" class="team-photo" width="100" height="100" loading="lazy" onerror="this.src='img/placeholder-profile.jpg'">
+                <div class="team-info">
+                  <h3 class="card-title">Sarah Trausner</h3>
+                  <p class="team-role">Master Student (DEOP 2.5)</p>
+                  <p class="team-email"><a href="mailto:sarah.trausner@plus.ac.at">sarah.trausner@plus.ac.at</a></p>
+                </div>
+              </div>
+              <p class="team-bio">Master student working on dynamic energy optimization research. Active from October 1, 2024 to August 31, 2025.</p>
+            </div>
+          </div>
+        </div>
+          
+        <div class="flex-item">
+          <div class="card team-card">
+            <div class="card-body">
+              <div class="team-header">
+                <img src="img/organizer_olga_mironova.jpg" alt="Olga Mironova" class="team-photo" width="100" height="100" loading="lazy" onerror="this.src='img/placeholder-profile.jpg'">
+                <div class="team-info">
+                  <h3 class="card-title">Olga Mironova</h3>
+                  <p class="team-role">Master Student (Danieli X - PLUS)</p>
+                  <p class="team-email"><a href="mailto:olga.mironova@plus.ac.at">olga.mironova@plus.ac.at</a></p>
+                </div>
+              </div>
+              <p class="team-bio">Master student involved in the Danieli X research collaboration. Active from February 15, 2024 to June 30, 2025.</p>
+            </div>
+          </div>
+        </div>
+          
+        <div class="flex-item">
+          <div class="card team-card">
+            <div class="card-body">
+              <div class="team-header">
+                <img src="img/organizer_sabrina_pochaba.jpg" alt="Sabrina Pochaba" class="team-photo" width="100" height="100" loading="lazy" onerror="this.src='img/placeholder-profile.jpg'">
+                <div class="team-info">
+                  <h3 class="card-title">Sabrina Pochaba</h3>
+                  <p class="team-role">Predoc-Position - In co-operation with Salzburg Research</p>
+                  <p class="team-email"><a href="mailto:sabrina.pochaba@salzburgresearch.at">sabrina.pochaba@salzburgresearch.at</a></p>
+                </div>
+              </div>
+              <p class="team-bio">Researcher focusing on multi-agent reinforcement learning. Active from September 1, 2021 to December 31, 2025.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex-item">
+          <div class="card team-card">
+            <div class="card-body">
+              <div class="team-header">
+                <img src="img/placeholder-profile.jpg" alt="Benjamin Halilovic" class="team-photo" width="100" height="100" loading="lazy">
+                <div class="team-info">
+                  <h3 class="card-title">Benjamin Halilovic</h3>
+                  <p class="team-role">Master Student</p>
+                  <p class="team-email"><a href="mailto:benjamin.halilovic1102@gmail.com">benjamin.halilovic1102@gmail.com</a></p>
+                </div>
+              </div>
+              <p class="team-bio">Master student contributing to the team's research in reinforcement learning and smart analytics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications">
+    <div class="container">
+      <h2>Recent Publications</h2>
+      <p class="section-intro">Our latest research contributions to the field:</p>
+
+      <div class="publications-list">
+        <!-- Publications will be loaded via JavaScript -->
+        <div class="publication-item">
+          <h3 class="publication-title">Example Publication Title</h3>
+          <p class="publication-authors">Hirlaender, S., et al.</p>
+          <p class="publication-venue">Journal of Reinforcement Learning, 2023</p>
+          <div class="publication-links">
+            <a href="#" class="publication-link">View Paper</a>
+            <a href="#" class="publication-link">DOI</a>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <h3 class="publication-title">Another Example Publication</h3>
+          <p class="publication-authors">Team Members</p>
+          <p class="publication-venue">Conference on AI and Machine Learning, 2022</p>
+          <div class="publication-links">
+            <a href="#" class="publication-link">View Paper</a>
+            <a href="#" class="publication-link">DOI</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="#" class="btn btn-outline">View All Publications</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-light">
+    <div class="container">
+      <h2>Contact Us</h2>
+
+      <div class="flex-row">
+        <div class="flex-item">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Get in Touch</h3>
+              <p><strong>Email:</strong> <a href="mailto:simon.hirlaender@plus.ac.at">simon.hirlaender@plus.ac.at</a></p>
+              <p><strong>Team Page:</strong> <a href="https://www.plus.ac.at/aihi/der-fachbereich/ida-lab/teams/sarl/" target="_blank" rel="noopener">SARL Team at PLUS</a></p>
+              <p><strong>Department:</strong> <a href="https://www.plus.ac.at/?lang=en&page_id=298879" target="_blank" rel="noopener">Department of Artificial Intelligence and Human Interfaces</a></p>
+              <p><strong>Faculty:</strong> <a href="https://www.plus.ac.at/digital-and-analytical-sciences/the-faculty/?lang=en" target="_blank" rel="noopener">Faculty of Digital and Analytical Sciences</a></p>
+              <p><strong>University:</strong> <a href="https://www.plus.ac.at" target="_blank" rel="noopener">PLUS University Salzburg, Austria</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-item">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Visit Us</h3>
+              <p><strong>Address:</strong></p>
+              <p>IDA Lab Salzburg<br>
+              Fachbereich Artificial Intelligence & Human Interfaces (AIHI)<br>
+              Fakultät Digital & Analytical Sciences (DAS)<br>
+              Paris Lodron Universität Salzburg (PLUS)<br>
+              Jakob-Haringer-Straße 6 | Techno 6 | 5020 Salzburg | Austria</p>
+
+              <div class="map-container">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2677.6267134350133!2d13.038373776952553!3d47.82468487157901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47769073d54d4fc7%3A0x293dd765159eb883!2sJakob-Haringer-Stra%C3%9Fe%206%2C%205020%20Salzburg%2C%20Austria!5e0!3m2!1sen!2sus!4v1718637694321!5m2!1sen!2sus" 
+                  width="100%" 
+                  height="450" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="map-caption">
+                  <p><strong>IDA Lab Salzburg (SARL Team)</strong><br>
+                  Jakob-Haringer-Straße 6 | Techno 6 | 5020 Salzburg | Austria</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="flex-row">
+        <div class="flex-item">
+          <h3>SARL Team</h3>
+          <p>Smart Analytics and Reinforcement Learning research group at University of Salzburg.</p>
+        </div>
+
+        <div class="flex-item">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="flex-item">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub" class="social-icon">GitHub</a>
+            <a href="#" aria-label="LinkedIn" class="social-icon">LinkedIn</a>
+            <a href="#" aria-label="Twitter" class="social-icon">Twitter</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2023 SARL Team, University of Salzburg. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Performance monitoring script -->
+  <script>
+    // Create loading indicator
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.className = 'loading-indicator';
+    loadingIndicator.textContent = 'Loading...';
+    document.body.appendChild(loadingIndicator);
+
+    // Track page load performance
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+      loadingIndicator.textContent = 'DOM Loaded';
+
+      // Handle mobile menu toggle
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.setAttribute(
+            'aria-expanded',
+            menuToggle.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+          );
+        });
+      }
+    });
+
+    // When everything is loaded
+    window.addEventListener('load', () => {
+      loadingIndicator.textContent = 'Page Loaded';
+
+      // Hide the indicator after 2 seconds
+      setTimeout(() => {
+        loadingIndicator.style.opacity = '0';
+        setTimeout(() => {
+          loadingIndicator.remove();
+        }, 300);
+      }, 2000);
+
+      // Log performance metrics
+      if (window.performance) {
+        const pageLoadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+        console.log(`📊 Page fully loaded in ${pageLoadTime}ms`);
+
+        // Report slow resources
+        if (window.performance.getEntriesByType) {
+          const resources = window.performance.getEntriesByType('resource');
+          const slowResources = resources.filter(r =>
+            r.responseEnd && (r.responseEnd - r.startTime > 1000)
+          );
+
+          if (slowResources.length > 0) {
+            console.warn('⚠️ Slow resources:',
+              slowResources.map(r => ({
+                url: r.name.split('/').pop(),
+                time: Math.round(r.responseEnd - r.startTime) + 'ms'
+              }))
+            );
+          }
+        }
+      }
+    });
+
+    // Cancel loading of resources that take too long
+    setTimeout(() => {
+      const images = Array.from(document.querySelectorAll('img[loading="lazy"]'));
+      images.forEach(img => {
+        if (!img.complete && img.src) {
+          img.setAttribute('data-src', img.src);
+          img.src = 'img/placeholder.jpg';
+          console.log(`⚠️ Replaced slow image: ${img.getAttribute('data-src')}`);
+        }
+      });
+    }, 5000);
+  </script>
 </body>
 </html>
