@@ -204,6 +204,15 @@ function setupPublications() {
   // Simon Hirlaender's actual research publications
   const publications = [
     {
+      title: "Tutorial on Meta-Reinforcement Learning and GP-MPC at the RL4AA'24 Workshop",
+      authors: "Hirlaender, S., Kaiser, J., Xu, C., Santamaria Garcia, A.",
+      venue: "RL4AA'24 Workshop, Paris-Lodron-Universität Salzburg, Austria, February 5-7, 2024",
+      links: [
+        { text: "Zenodo", url: "https://doi.org/10.5281/zenodo.10887397" },
+        { text: "GitHub", url: "https://github.com/RL4AA/rl4aa24-tutorial" }
+      ]
+    },
+    {
       title: "Ultra Fast Reinforcement Learning Demonstrated at CERN AWAKE",
       authors: "Hirlaender, S., Lamminger, L., Zevi Della Porta, G., Kain, V.",
       venue: "IPAC'23 Conference Proceedings, 4459-4462, 2023",
