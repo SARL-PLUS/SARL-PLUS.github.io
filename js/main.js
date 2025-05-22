@@ -213,8 +213,8 @@ function setupPublications() {
       ]
     },
     {
-      title: "Ultra Fast Reinforcement Learning Demonstrated at CERN AWAKE",
-      authors: "Hirlaender, S., Lamminger, L., Zevi Della Porta, G., Kain, V.",
+      title: "Ultra Fast Reinforcement Learning in Accelerator Control Demonstrated on CERN AWAKE",
+      authors: "Hirlaender, S., Lamminger, L., Zevi-Della-Porta, G., & Kain, V.",
       venue: "IPAC'23 Conference Proceedings, 4459-4462, 2023",
       links: [
         { text: "PDF", url: "https://cds.cern.ch/record/2886522/files/document.pdf" },
@@ -222,19 +222,54 @@ function setupPublications() {
       ]
     },
     {
-      title: "Sample-Efficient Reinforcement Learning for CERN Accelerator Control",
-      authors: "Kain, V., Hirlander, S., Goddard, B., Velotti, F.M., Della Porta, G.Z., Bruchon, N.",
-      venue: "Physical Review Accelerators and Beams, Vol. 23, 2020",
+      title: "Towards Automatic Setup of 18 MeV Electron Beamline Using Machine Learning",
+      authors: "Eichinger, S., Blanco-García, O., Bruchon, N., Corsini, R., Doebert, S., Farabolini, W., Hirlaender, S., & Latina, A.",
+      venue: "Machine Learning: Science and Technology, 4, 025016, 2022",
       links: [
-        { text: "DOI", url: "https://link.aps.org/doi/10.1103/PhysRevAccelBeams.23.124801" }
+        { text: "DOI", url: "https://iopscience.iop.org/article/10.1088/2632-2153/acce21" },
+        { text: "arXiv", url: "https://arxiv.org/abs/2209.03183" }
       ]
     },
     {
-      title: "Model-Free and Bayesian Ensembling Model-Based Deep Reinforcement Learning for Particle Accelerator Control",
-      authors: "Hirlander, S., Bruchon, N.",
-      venue: "arXiv preprint, 2020",
+      title: "Application of Reinforcement Learning in the LHC Tune Feedback",
+      authors: "Grech, L., Valentino, G., Alves, D., Hirlaender, S., Aguglia, D., Aßmann, R., Azzopardi, G., Barnes, M. J., Baumgärtel, P., & Zimmermann, F.",
+      venue: "Frontiers in Physics, 10, 929064, 2022",
+      links: [
+        { text: "DOI", url: "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2022.929064/full" },
+        { text: "CERN", url: "https://cds.cern.ch/record/2836033" }
+      ]
+    },
+    {
+      title: "Online Multi-objective Particle Accelerator Optimization of the AWAKE Electron Beam Line for Simultaneous Emittance and Orbit Control",
+      authors: "Scheinker, A., Hirlaender, S., Velotti, F. M., Gessner, S., Della Porta, G. Z., Kain, V., & Valentino, G.",
+      venue: "Frontiers in Physics, 9, 741639, 2021",
+      links: [
+        { text: "DOI", url: "https://www.frontiersin.org/articles/10.3389/fphy.2021.741639/full" }
+      ]
+    },
+    {
+      title: "Sample-Efficient Reinforcement Learning for CERN Accelerator Control",
+      authors: "Kain, V., Hirlander, S., Goddard, B., Velotti, F. M., Della Porta, G. Z., Bruchon, N., & Valentino, G.",
+      venue: "Physical Review Accelerators and Beams, 23(12), 124801, 2020",
+      links: [
+        { text: "DOI", url: "https://link.aps.org/doi/10.1103/PhysRevAccelBeams.23.124801" },
+        { text: "CERN", url: "https://cds.cern.ch/record/2747760" }
+      ]
+    },
+    {
+      title: "Model-Free and Bayesian Ensembling Model-Based Deep Reinforcement Learning for Particle Accelerator Control Demonstrated on the Fermi FEL",
+      authors: "Hirlaender, S., Bruchon, N.",
+      venue: "arXiv preprint arXiv:2012.09737, 2020",
       links: [
         { text: "arXiv", url: "https://arxiv.org/abs/2012.09737" }
+      ]
+    },
+    {
+      title: "New Paradigms for Tuning Accelerators: Automatic Performance Optimization and First Steps Towards Reinforcement Learning at CERN",
+      authors: "Hirlaender, S., Kain, V., Schenk, M.",
+      venue: "Information, 12(7), 262, 2020",
+      links: [
+        { text: "DOI", url: "https://www.mdpi.com/2078-2489/12/7/262" }
       ]
     },
     {
@@ -253,7 +288,7 @@ function setupPublications() {
   publications.forEach(pub => {
     let linksHTML = '';
     pub.links.forEach(link => {
-      linksHTML += `<a href="${link.url}" class="publication-link">${link.text}</a>`;
+      linksHTML += `<a href="${link.url}" class="publication-link" target="_blank" rel="noopener noreferrer">${link.text}</a>`;
     });
 
     publicationsHTML += `
