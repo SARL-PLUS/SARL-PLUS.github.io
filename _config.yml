@@ -1,4 +1,7 @@
-title: My GitHub Pages Site
-description: A simple website hosted on GitHub Pages
+title: SARL-PLUS
+description: Smart Analytics & Reinforcement Learning at PLUS University Salzburg
 theme: jekyll-theme-cayman
+github:
+  is_project_page: true
+  repository_url: https://github.com/SARL-PLUS
 

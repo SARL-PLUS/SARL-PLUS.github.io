@@ -201,34 +201,39 @@ function setupPublications() {
   const publicationsContainer = document.querySelector('.publications-list');
   if (!publicationsContainer) return;
 
-  // Example publications data (in a real app, this would be loaded from an API or file)
+  // Simon Hirlaender's actual research publications
   const publications = [
     {
-      title: "Advancements in Reinforcement Learning for Time Series Analysis",
-      authors: "Hirlaender, S., Smith, J., & Johnson, M.",
-      venue: "Journal of Reinforcement Learning, 2023",
+      title: "Ultra Fast Reinforcement Learning Demonstrated at CERN AWAKE",
+      authors: "Hirlaender, S., Lamminger, L., Zevi Della Porta, G., Kain, V.",
+      venue: "IPAC'23 Conference Proceedings, 4459-4462, 2023",
       links: [
-        { text: "PDF", url: "#" },
-        { text: "DOI", url: "#" },
-        { text: "Code", url: "#" }
+        { text: "PDF", url: "https://cds.cern.ch/record/2886522/files/document.pdf" },
+        { text: "DOI", url: "https://inspirehep.net/literature/2716660" }
       ]
     },
     {
-      title: "Bayesian Methods for Intelligent Decision Making Systems",
-      authors: "Hirlaender, S., Anderson, K., & Müller, T.",
-      venue: "Conference on AI and Machine Learning, 2022",
+      title: "Sample-Efficient Reinforcement Learning for CERN Accelerator Control",
+      authors: "Kain, V., Hirlander, S., Goddard, B., Velotti, F.M., Della Porta, G.Z., Bruchon, N.",
+      venue: "Physical Review Accelerators and Beams, Vol. 23, 2020",
       links: [
-        { text: "PDF", url: "#" },
-        { text: "DOI", url: "#" }
+        { text: "DOI", url: "https://link.aps.org/doi/10.1103/PhysRevAccelBeams.23.124801" }
       ]
     },
     {
-      title: "Human-AI Collaborative Frameworks: A Review",
-      authors: "Meyer, L., Hirlaender, S., & Chen, Y.",
-      venue: "Human-Computer Interaction Journal, 2022",
+      title: "Model-Free and Bayesian Ensembling Model-Based Deep Reinforcement Learning for Particle Accelerator Control",
+      authors: "Hirlander, S., Bruchon, N.",
+      venue: "arXiv preprint, 2020",
       links: [
-        { text: "PDF", url: "#" },
-        { text: "DOI", url: "#" }
+        { text: "arXiv", url: "https://arxiv.org/abs/2012.09737" }
+      ]
+    },
+    {
+      title: "Deep Meta Reinforcement Learning for Rapid Adaptation in Linear Markov Decision Processes",
+      authors: "Hirländer, S.",
+      venue: "Applications to CERN's AWAKE Project, 2022",
+      links: [
+        { text: "Info", url: "https://uni-salzburg.elsevierpure.com/en/publications/deep-meta-reinforcement-learning-for-rapid-adaptation-in-linear-m" }
       ]
     }
   ];
